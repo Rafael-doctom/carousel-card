@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: center;
+    /* min-height: 100vh; */
+}
+
+.carousel-item{
+    display: none;
+}
+
+
+.carousel .carousel-item-visible{
+    display: block;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+        background-color: red;
+    }
+
+    .imagemNone {
+        display: none;
+    }
+
+    .imagemBlock {
+        display: block;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <button>anterior</button>
+        <img class="images imagemNone imagemBlock" src="../1.jpeg" alt="">
+        <img class="images imagemNone" src="../2.jpg" alt="">
+        <img class="images imagemNone" src="../3.jpeg" alt="">
+        <button id="next">next</button>
+    </div>
+
+    <script>
+        let next = document.getElementById('next')
+        let images = document.querySelectorAll('.images')
+
+        let index = 0
+
+        next.addEventListener('click', () => {
+
+
+            if (index === images.length - 1) {
+                index = 0
+            } else {
+                index++
+            }
+
+
+            images.forEach(image => {
+                image.classList.remove('imagemBlock')
+            })
+
+            images[index].classList.add('imagemBlock')
+
+        })
+
+    </script>
+
+</body>
+
+</html>
